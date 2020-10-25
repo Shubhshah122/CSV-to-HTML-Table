@@ -1,0 +1,76 @@
+.login-popup {
+  display: none;
+  position: fixed;
+  bottom: 13px;
+  right: 21px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.container {
+	max-width: 50%;
+	width: 50%;
+	float:left;
+	height: 90vh;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	overflow: scroll;
+	background-color: white;
+}
+
+body {
+	background-color: white;
+}
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#uploadBtn, #browseBtn {
+    cursor: pointer;
+}
+
+#headerTable tr:first-child td:nth-last-child(2){
+    background-color: gray;
+}
+
+#headerTable tr:first-child td:nth-last-child(1){
+    background-color: gray;
+}
+
+#customerData tr:first-child td{
+    background-color: lightgreen;
+}
+
+.estimate {
+	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
+}
+
+.loginForm {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-bottom: 0;
+	padding-right: 1;
+}
+
+.deleteEstimationRow {
+	cursor: pointer;
+}
+
+#loginFormHeading {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#emailHeading, #passwordHeading {
+	font-weight: bold;
+}

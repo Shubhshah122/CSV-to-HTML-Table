@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body alink="blue" vlink="blue">
+    <div class="heading">
+        <h1>Story Estimation Tool by Serosoft</h1>
+    </div>
+
+    <div class="container">
+        <span id="test"></span>
+        <input id="fileUpload" type="file" accept=".csv" onchange="updateFileName()" hidden />
+        <table id="headerTable">
+            <tr>
+                <td><span>Import CSV File</span></td>
+                <td><span id="fileName">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span></td>
+                <td><span id="browseBtn" onclick=fileUpload.click()>Browse</span></td>
+                <td><span id="uploadBtn" onclick='createTable()'>Upload</span></td>
+            </tr>
+        </table>
+
+        <br /><br />
+
+        <table id="customerData">
+        </table>
+        <br /><br />
+    </div>
+
+    <div class="container">
+        <br />
+        <b>&nbsp;&nbsp;Story ID</b>  <span id="storyID">&emsp;&emsp;&emsp;</span>
+        <b>&nbsp;&nbsp;Priority</b>  <span id="priorityID">&emsp;&emsp;&emsp;</span>
+        <b>&nbsp;&nbsp;Client</b>  <span id="clientID">&emsp;&emsp;&emsp;</span> <br />
+        <b>&nbsp;&nbsp;Summary</b>  <span id="titleID"></span>
+        <br />
+        <b>&nbsp;&nbsp;Select Type Write Desc.</b>  Select Complexity
+        <br /><br />
+        &nbsp;
+        <select id="estimationType">
+            <option value="api">API</option>
+            <option value="jasperReport">Jasper Report</option>
+            <option value="permission">Permission</option>
+        </select>
+        <input type="text" id="estimationDescription" value=''>
+        <select id="complexity">
+            <option value="simple">Simple</option>
+            <option value="medium">Medium</option>
+            <option value="complex">Complex</option>
+        </select>
+        <button id="addEstimation" onclick="appendEstimation()">Add Estimation</button>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button onclick='openForm()'>Login</button>
+        <br /><br />
+        <table id = "estimationTable">
+            <tr>
+                <th>&nbsp;Estimation Type&nbsp;</th>
+                <th>&nbsp;Estimation Description&nbsp;</th>
+                <th>&nbsp;Complexity&nbsp;</th>
+                <th>&nbsp;Story Points&nbsp;</th>
+            </tr>
+        </table>
+        <br />
+        &nbsp;
+        <button id="finishStoryEstimation" onclick="updateEstimationStoryPoint()">Finish Story Estimation</button>
+    </div>
+
+    <div class="login-popup" id="loginForm">
+        <table>
+            <tr><label id="loginFormHeading">Login</label> <br /></tr>
+            <tr><label id="emailHeading" for="email"> Email </label></tr>
+            <tr><input type="text" id="email" placeholder="Enter Email" required> &emsp;&emsp;&emsp;<br /></tr>
+            <tr><label id="passwordHeading" for="password"> Password </label></tr>
+            <tr><input type="password" id="password" placeholder="Enter Password" required> <br /></tr>
+            <tr><button class="loginBtn" onClick='validateLogin()'>Login</button></tr>
+            &nbsp;
+            <tr><button class="closeBtn" onclick='closeForm()'>Close</button></tr>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
